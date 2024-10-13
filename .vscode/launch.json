@@ -1,0 +1,28 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--name", "cifar10-100_500", 
+                "--dataset", "cifar10", 
+                "--model_type", "ViT-B_16", 
+                "--pretrained_dir", "checkpoint/ViT-B_16.npz",
+                // "--coco_path", "/mnt/e/datasets/coco2017",
+            // "--device", "cpu",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CUDA_VISIBLE_DEVICES": "-1",
+            }
+        }
+    ]
+}
